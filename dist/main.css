@@ -80,65 +80,83 @@ body {
 }
 
 .grey-section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   width: 100%;
-  height: 270px;
-  background-color: white;
-}
-
-@media screen and (max-width: 1080px) {
-  .grey-section {
-    flex-direction: column;
-  }
-}
-
-.grey-section .up {
+  height: 150px;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.grey-section .gs-bloc {
+  flex: 1;
   height: 100%;
-  flex: 2;
 }
 
 @media screen and (max-width: 1080px) {
-  .grey-section .up {
-    flex: 1;
+  .grey-section .gs-bloc {
+    min-width: 50%;
+    max-width: 50%;
   }
 }
 
-.grey-section .up .gb-bloc {
-  height: 100%;
-  width: 50%;
-}
-
-.grey-section .up .gb-bloc.light-grey {
+.grey-section .gs-bloc.light-grey {
   background-color: #cfcfcf;
 }
 
-.grey-section .up .gb-bloc.simple-grey {
+.grey-section .gs-bloc.simple-grey {
   background-color: #9c9c9c;
 }
 
-.grey-section .down {
-  height: 100%;
-  flex: 1;
-}
-
-@media screen and (max-width: 1080px) {
-  .grey-section .down {
-    width: 50%;
-  }
-}
-
-.grey-section .down .gb-bloc {
-  height: 100%;
-}
-
-.grey-section .down .gb-bloc.dark-grey {
+.grey-section .gs-bloc.dark-grey {
   background-color: dimgray;
 }
 
+/*
+.grey-section {
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: $medium) {
+    flex-direction: column;
+  }
+  flex-wrap: wrap;
+  width: 100%;
+  height: $grey-section-height;
+  background-color: white;
+
+  .up {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    flex: 2;
+    @media screen and (max-width: $medium) {
+      flex: 1;
+    }
+    .gs-bloc {
+      height: 100%;
+      width: 50%;
+      &.light-grey {
+        background-color: lighten($gris, $light-color);
+      }
+
+      &.simple-grey {
+        background-color: $gris;
+      }
+    }
+  }
+  .down {
+    height: 100%;
+    flex: 1;
+    @media screen and (max-width: $medium) {
+      width: 50%;
+    }
+    .gs-bloc {
+      height: 100%;
+      &.dark-grey {
+        background-color: darken($gris, $dark-color);
+      }
+    }
+  }
+}
+*/
 .footer {
   width: 100%;
   height: 70px;

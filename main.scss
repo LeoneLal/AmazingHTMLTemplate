@@ -3,7 +3,7 @@ $navbar-height: 70px;
 $hero-height: 200px;
 $blue-section-height: 250px;
 $yellow-section-height: 250px;
-$grey-section-height: 270px;
+$grey-section-height: 150px;
 $light-color: 20;
 $dark-color: 20;
 
@@ -97,6 +97,36 @@ body {
 }
 
 .grey-section {
+  width: 100%;
+  height: $grey-section-height;
+  display: flex;
+  flex-wrap: wrap;
+
+  .gs-bloc {
+    flex: 1;
+    height: 100%;
+
+    @media screen and (max-width: $medium) {
+      min-width: 50%;
+      max-width: 50%;
+    }
+
+    &.light-grey {
+      background-color: lighten($gris, $light-color);
+    }
+
+    &.simple-grey {
+      background-color: $gris;
+    }
+
+    &.dark-grey {
+      background-color: darken($gris, $dark-color);
+    }
+  }
+}
+
+/*
+.grey-section {
   display: flex;
   flex-direction: row;
   @media screen and (max-width: $medium) {
@@ -115,7 +145,7 @@ body {
     @media screen and (max-width: $medium) {
       flex: 1;
     }
-    .gb-bloc {
+    .gs-bloc {
       height: 100%;
       width: 50%;
       &.light-grey {
@@ -133,7 +163,7 @@ body {
     @media screen and (max-width: $medium) {
       width: 50%;
     }
-    .gb-bloc {
+    .gs-bloc {
       height: 100%;
       &.dark-grey {
         background-color: darken($gris, $dark-color);
@@ -141,7 +171,7 @@ body {
     }
   }
 }
-
+*/
 .footer {
   width: 100%;
   height: $navbar-height;
